@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(./img/187161.webp);
+    background-size: cover;
+    
+}
+
+#all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.keys{
+    color: aliceblue;
+    font-size: 20px;
+    border: 2px black solid;
+    background-color: rgb(36, 33, 33, 0.9);
+    padding: 25px 30px;
+    transition: all 0.05;
+    
+}
+
+.play {
+    transform: scale(1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+    color: #ffc600;
+}
+
+kbd{
+    display: block;
+    text-align: center;
+}
+
+span{
+    color: rgba(233, 229, 16, 0.712);
+    font-size: small;
+    padding: 0px;
+    display: block;
+    margin-top: 8px;
+}
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./INDEX.CSS">
+    <title>Drum kit</title>
+</head>
+<body>
+    <div id="all">
+        <div class="keys" id="soundA" data-key="65">
+            <kbd>A</kbd>
+            <span>CLAP</span>
+        </div>
+        <div class="keys" id="soundS" data-key="83">
+            <kbd>S</kbd>
+            <span>HIHAT</span>
+        </div>
+        <div class="keys" id="soundD" data-key="68">
+            <kbd>D</kbd>
+            <span>KICK</span>
+        </div>
+        <div class="keys" id="soundF" data-key="70">
+            <kbd>F</kbd>
+            <span>OPENHAT</span>
+        </div>
+        <div class="keys" id="soundG" data-key="71">
+            <kbd>G</kbd>
+            <span>BOOM</span>
+        </div>
+        <div class="keys" id="soundH" data-key="72">
+            <kbd>H</kbd>
+            <span>RIDE</span>
+        </div>
+        <div class="keys" id="soundJ" data-key="74">
+            <kbd>J</kbd>
+            <span>SNARE</span>
+        </div>
+        <div class="keys" id="soundK" data-key="75">
+            <kbd>K</kbd>
+            <span>TOM</span>
+        </div>
+        <div class="keys" id="soundL" data-key="76">
+            <kbd>L</kbd>
+            <span>TINK</span>
+        </div>
+    </div>
+
+    <audio data-key="65" src="./sound/mixkit-one-clap-481.wav"></audio>
+    <audio data-key="83" src="./sound/2.wav"></audio>
+    <audio data-key="68" src="./sound/3.wav"></audio>
+    <audio data-key="70" src="./sound/4.wav"></audio>
+    <audio data-key="71" src="./sound/5.wav"></audio>
+    <audio data-key="72" src="./sound/6.wav"></audio>
+    <audio data-key="74" src="./sound/7.wav"></audio>
+    <audio data-key="75" src="./sound/8.wav"></audio>
+    <audio data-key="76" src="./sound/9.wav"></audio>
+
+    <script>
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+    
+            key.classList.add('play');
+            audio.currentTime = 0;
+            audio.play();
+            e.target.classList.remove('play');
+        }
+    
+
+        
+    
+        const keys = Array.from(document.querySelectorAll('.key'));
+        window.addEventListener('keydown', playSound);
+        setTimeout(3000);
+
+
+    </script>
+</body>
+</html>
